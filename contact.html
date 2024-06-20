@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-container" onclick="toggleMenu()">
+                <div id="hamburger-menu" class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <span class="menu-label">Izbornik</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Naslovna</a></li>
+                <li><a href="about.html">O nama</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="news.html">Vijesti</a></li>
+                <li><a href="specials.html">Posebne ponude</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="static-content">
+            <h1>Kontaktirajte nas</h1>
+            <p>Nešto o restoranu.</p>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Ime*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Poruka*</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Pošalji</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Restoran</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

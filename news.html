@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulinarstvo Vijesti</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-container" onclick="toggleMenu()">
+                <div id="hamburger-menu" class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <span class="menu-label">Izbornik</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Naslovna</a></li>
+                <li><a href="about.html">O nama</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="news.html">Vijesti</a></li>
+                <li><a href="specials.html">Posebne ponude</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="news" class="news-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+         //   const apiKey = 'pub_45050060dc5435ac2e489c059c1dd99f9010c';
+       //     const upit = 'culinary';
+       // placena verzija     const url = 'https://newsdata.io/api/1/latest?country=hr&apikey=pub_45050060dc5435ac2e489c059c1dd99f9010c&q=recepti';
+       const url = 'https://newsdata.io/api/1/latest?apikey=pub_45050060dc5435ac2e489c059c1dd99f9010c&q=culinary';
+
+            async function loadSpecialOffers() {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+
+                    if (data.status === "success") { //(data.success)  (data.status === "ok")
+                        const newsContainer = document.getElementById('news');
+                        data.results.forEach(article => {
+                            const newsElement = document.createElement('div');
+                            newsElement.classList.add('news-article');
+                            newsElement.innerHTML = `
+                                <img src="${article.image_url || 'https://via.placeholder.com/150'}" alt="News Image">
+                                <h2>${article.title}</h2>
+                                <p>${article.description || 'Bez opisa.'}</p>
+                                <a href="${article.link}" target="_blank">Pročitaj više</a>
+                            `;
+                            newsContainer.appendChild(newsElement);
+                        });
+                    } else {
+                        console.error("Greška kod prikaza vijesti", data);
+                    }
+                } catch (error) {
+                    console.error("Greška dohvata:", error);
+                }
+            }
+
+            loadSpecialOffers();
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Restoran</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

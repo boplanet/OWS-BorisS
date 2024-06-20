@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posebne Ponude</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-container" onclick="toggleMenu()">
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="menu-label">Izbornik</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Naslovna</a></li>
+                <li><a href="about.html">O nama</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="news.html">Vijesti</a></li>
+                <li><a href="specials.html">Posebne ponude</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="special-offers">
+            <h1>Posebne Ponude</h1>
+            <p>Nešto o specijalnim ponudama.</p>
+            <div id="special-offers">
+                <!-- iz JSON-a -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Restoran</p>
+    </footer>
+</body>
+</html>

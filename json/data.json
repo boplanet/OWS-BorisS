@@ -1,0 +1,17 @@
+[
+  {
+    "title": "DNEVNI MENU 1",
+    "description": "Opis 1.",
+    "image": "https://via.placeholder.com/400x300"
+  },
+  {
+    "title": "DNEVNI MENU 2",
+    "description": "Opis 2.",
+    "image": "https://via.placeholder.com/400x300"
+  },
+  {
+    "title": "DNEVNI MENU 3",
+    "description": "Opis 3.",
+    "image": "https://via.placeholder.com/400x300"
+  }
+]
